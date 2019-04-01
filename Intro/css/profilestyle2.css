@@ -1,0 +1,374 @@
+
+   :root{
+    --back_color: #221F2E;
+    --front_color: #2E2B3F;
+    --purple: #6240F6;
+    --pink: #EB7AC8;
+    --blue: #2DB8E7;
+    --gold: #DBA514;
+    --yelow: #EEB609;
+}
+	@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,700");
+
+
+.sidebar{
+    grid-area: sidebar;
+    background: linear-gradient(
+      rgba(180,177,189,0),
+      rgba(180,177,189,0.09),
+      rgba(180,177,189,0));
+
+    justify-content: center;
+}
+.tab-content
+{
+   grid-area: tab-content;
+   justify-content: center;
+
+
+}
+.foot{
+
+    grid-area: foot;
+    background: rgba(180,177,189,0.1));
+    
+}
+.btn-outline-danger{
+
+  float: right;
+}
+.btn-outline-dark{
+  float: left;
+}
+
+.profil{
+       margin-top: 100px;
+       font-size: 1.5em;
+       width: 50%;
+       height: 0.05vh;
+       
+       
+       display: grid;
+       grid-template-areas: 
+       "sidebar"
+       "tab-content"
+       "foot";
+       grid-template-columns: 1fr;
+       grid-template-rows: 130px 600px 130px;
+
+}
+
+.sidebar,
+.tab-content,
+.foot{
+  padding: 1em;
+}
+.profilnav .tab-group{
+
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+}
+.profilnav .tab{
+  list-style: none;
+  padding: 1em 0;
+
+}
+.profilnav .tab a{
+    font-family: "Arial"; 
+    font-size: 25px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 100; 
+    line-height: 40px; 
+    
+    line-height: 20.9px;
+    color: white;
+    
+    opacity: 0.6;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.profilnav .tab a:hover{
+	opacity: 1;
+	text-decoration: none;
+	color: white;
+}
+.card{
+	background: transparent;
+	text-align: center;
+	border:none;
+	margin-left: 100px;
+  height: 240px;
+	
+}
+.card-img-top{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#pen{
+  float: right;
+  border-width: 2px;
+  border-style: groove;
+  margin-bottom: 15px;
+  border-color: white;
+  border-radius: 15px;
+  border-spacing: 1px;
+  padding: 10px;
+  transition: 1s;
+  margin-right: 18px;
+
+}
+#pen:hover{
+
+  border-color: #2DB8E7;
+}
+.fa-pencil-square-o{
+  font-size: 1.2em;
+  transition: 1s;
+}
+.fa-pencil-square-o:hover{
+   color: #2DB8E7;
+}
+.hero
+{   
+	max-width: 400px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.btn-light{
+    display: inline-block;
+    
+    
+    font-weight: 200;
+    
+    padding: 0.1em 0.6em;
+    border-radius: 40px;
+    margin: 1em 0;
+    float: right;
+
+    transition: 0.3s;
+}
+.btn-light:hover{
+	box-shadow: 0 10px 50px rgba(188,197,216,1);
+	text-decoration: none;
+}
+
+
+
+.tab-content > div:last-child {
+  display: none;
+}
+small{
+
+
+  
+  margin-top: 25px;
+  font-family: "Nunito",sans-serif;
+  font-weight: 1px;
+  font-size: 12px;
+  color: white;
+  text-align: center;
+  margin-left: 28px;
+}
+h6{
+
+
+  padding: 2px;
+  margin-top: 50px;
+  font-family: "Nunito",sans-serif;
+  font-weight: 3px;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+}
+
+
+
+
+
+@media (min-width: 1040px){
+
+ .profil{
+ 	     margin-top: 50px;
+       grid-template-areas: 
+       "sidebar tab-content"
+        "sidebar foot";
+       grid-template-columns: 220px 0.9fr;
+       grid-template-rows: 1fr auto;
+       
+        
+}
+
+
+.profilnav .tab-group{
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+
+
+}
+.sidebar{
+    
+       padding-top: 9em;
+       
+
+}
+
+.hero{
+	
+	margin: 12px;
+}
+.card{
+	background: transparent;
+	text-align: center;
+	border:none;
+	margin-left: 120px;
+	
+}
+.card-img-top{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tab-content > div:last-child {
+  display: none;
+}
+
+.vcard{
+    margin-top: 10px;
+    margin-left: 100px;
+    width: 240px;
+    height: 405px;
+    background: #000c14;
+    border-radius: 8px;
+    box-shadow: 5px 0px 20px rgba(0,0,0,39%);
+}
+
+.header{
+    height: 40%;
+    position: relative;
+}
+
+.wave_bg{
+    border-radius: 8px;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.wave-01{
+    position: absolute;
+    width: 400px;
+    height: 450px;
+    /*background: linear-gradient(to top right, var(--gold), var(--yelow));*/
+    background: linear-gradient(to top right, #947047, #947047);
+    border-radius: 50%;
+    top: -200%;
+    left: -20%;
+    animation: rotate 10s linear infinite;
+}
+.wave-02{
+    position: absolute;
+    width: 400px;
+    height: 450px;
+    background: linear-gradient(to top right, #947047, #947047);
+    border-radius: 40%;
+    top: -205%;
+    left: -22%;
+    opacity: 0.5;
+    animation: rotate 15s linear infinite;
+}
+.wave-03{
+    position: absolute;
+    width: 400px;
+    height: 450px;
+    background: linear-gradient(to top right, #947047, #947047);
+    border-radius: 45%;
+    top: -198%;
+    left: -18%;
+    opacity: 0.2;
+    animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.profile_pic_content{
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 80%;
+    text-align: center;
+}
+.profile_pic_content::after{
+    content: '';
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, var(--purple), var(--pink));
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    z-index: -1;
+    opacity: 0;
+    transition: all .7s;
+}
+.profile_pic_content:hover::after{
+    opacity: 0.2;
+}
+
+.profile_pic{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+}
+
+.card_content{
+    position: relative;
+    top: 10%;
+    text-align: center;
+}
+
+.name{
+    color: white;
+    font-size: 12px;
+    position: relative;
+    
+
+}
+
+.button{
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    width: 50%;
+    margin-top: 19px;
+    margin-left: 25%;
+    /*background: linear-gradient(to top right,#947047,gold);*/
+    background:#947047;
+    padding: 2px 7px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bolder;
+    font-size: 15px;
+    transition: all .7s;
+    position: absolute;
+}
+.button:hover{
+    box-shadow: 0px 8px 20px rgba(0,0,0,39%);
+}
+
+}
+
+
