@@ -1,4 +1,8 @@
-<!doctype html>
+<?php
+ session_start();
+ if(empty($_SESSION))
+  header('Location:../../views/loginform.html');
+?>
 <html class="no-js" lang="en">
 
 <head>
@@ -53,7 +57,7 @@
     <link rel="stylesheet" href="css/calendar/fullcalendar.print.min.css">
     <!-- style CSS
 		============================================ -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
     <!-- responsive CSS
 		============================================ -->
     <link rel="stylesheet" href="css/responsive.css">
@@ -94,8 +98,8 @@
 								   <span class="mini-click-non">Acceuil</span>
 								</a>
                             <ul class="submenu-angle" aria-expanded="true">
-                                <li><a title="Dashboard v.1" href="index.html"><span class="mini-sub-pro">Client</span></a></li>
-                                <li><a title="Dashboard v.2" href="index-1.html"><span class="mini-sub-pro">Carte</span></a></li>
+                                <li><a title="Dashboard v.1" href="index.php"><span class="mini-sub-pro">Client</span></a></li>
+                                <li><a title="Dashboard v.2" href="index-1.php"><span class="mini-sub-pro">Carte</span></a></li>
                                 <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro">Liste des Articles</span></a></li>
                                 <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">Editer des Articles</span></a></li>
                                 <li><a title="Analytics" href="product-list.html"><span class="mini-sub-pro">Liste des Collections</span></a></li>
@@ -103,7 +107,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="#" aria-expanded="false"><i class="icon nalika-mail icon-wrap"></i> <span class="mini-click-non">Rendez-vous</span></a>
+                            <a class="has-arrow" href="#" aria-expanded="false"><i class="icon nalika-alarm-clock icon-wrap"></i> <span class="mini-click-non">Rendez-vous</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                                 <li><a title="Recrutement" href="rdvproftable.php"><span class="mini-sub-pro">Recrutement</span></a></li>
                                 <li><a title="Client" href="rdvctable.php"><span class="mini-sub-pro">Client</span></a></li>
@@ -111,7 +115,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="has-arrow" href="#" aria-expanded="false"><i class="icon nalika-diamond icon-wrap"></i> <span class="mini-click-non">Réclamation</span></a>
+                            <a class="has-arrow" href="#" aria-expanded="false"><i class="icon nalika-alarm icon-wrap"></i> <span class="mini-click-non">Réclamation</span></a>
                             
                         </li>
                         <li>
@@ -136,7 +140,7 @@
                             
                         </li>
                         <li>
-                            <a class="has-arrow" href="#" aria-expanded="false"><i class="icon nalika-smartphone-call icon-wrap"></i> <span class="mini-click-non">Commandes</span></a>
+                            <a class="has-arrow" href="#" aria-expanded="false"><i class="icon nalika-shopping-cart icon-wrap"></i> <span class="mini-click-non">Commandes</span></a>
                         </li>
                     </ul>
                 </nav>
@@ -160,27 +164,20 @@
                                         </div>
                                     </div>
                                     
-                                   <!-- <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                   <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                                         <div class="header-right-info">
                                             <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                                                <li class="nav-item dropdown">
-                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="icon nalika-mail" aria-hidden="true"></i><span class="indicator-ms"></span></a>
-                                                    <div role="menu" class="author-message-top dropdown-menu animated zoomIn">
-                                                        <div class="message-single-top">
-                                                            <h1>Message</h1>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="icon nalika-alarm" aria-hidden="true"></i><span class="indicator-nt"></span></a>
+                                                
+                                                <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="icon nalika-exit" aria-hidden="true"></i><span class="indicator-nt"></span></a>
                                                     <div role="menu" class="notification-author dropdown-menu animated zoomIn">
                                                         <div class="notification-single-top">
-                                                            <h1>Notifications</h1>
+                                                            <a href="../core/adlogout.php" style="text-decoration: none;"><h1>Quitter</h1></a>
                                                         </div>
                                                     </div>
                                                 </li>
                                             </ul>
                                         </div>
-                                    </div>-->
+                                    </div>
                                 </div>
                             </div>
                         </div>

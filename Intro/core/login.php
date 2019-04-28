@@ -1,8 +1,7 @@
 <?php
 include "config.php";
    if(isset($_POST['Logi']))
-  {//$bdd = new PDO('mysql:host=localhost;dbname=test', 'root', '');
-    
+  {
     session_start();
  
    $mail = htmlspecialchars($_POST['emaill_num']);
@@ -34,9 +33,9 @@ include "config.php";
               $verif->execute(array($mail,$mdp));
               $admin = $verif->fetch();
                  if($admin)
-              {
+               { $_SESSION['ad']='co'; 
                 exit('back');
-              }
+               }
               else
               {
                 $erreur="Vérifiez vos Coordonnées";
@@ -71,8 +70,9 @@ include "config.php";
               $verif->execute(array($mail,$mdp));
               $admin = $verif->fetch();
                  if($admin)
-              {
+              { $_SESSION['ad']='co';
                 $erreur = array();
+                
                 exit('back');
 
               }
@@ -83,10 +83,8 @@ include "config.php";
 
               }
               if(!empty($erreur))
-              exit('erreur');
-
-              
-        }  
+              exit('erreur'); 
+           }  
 
    }
    

@@ -8,6 +8,9 @@ if(isset($_SESSION['Id'])) {
    $requser->execute(array($_SESSION['Id']));
    $user = $requser->fetch();
    $img= $user['avatar'];
+
+   
+
     }
     else{
       header('location:../index.html');
@@ -240,7 +243,6 @@ if(isset($_SESSION['Id'])) {
    		<ul class="tab-group">
    			<li class="tab active"><a href="#ongle1">Mon Espace</a></li>
    			<li class="tab" id="cartebout"><a href="#ongle2">Ma carte</a></li>
-   			
    		</ul>
    	</nav>
    </div>
@@ -314,6 +316,10 @@ if(isset($_SESSION['Id'])) {
                 <div class="name">
                     <h4 style="margin-bottom: 10px;"><?php echo $user['Nom']?></h4>
                 </div>
+                <div class="pointe">
+                  
+                    <a href="#" class="valeurp" style="text-decoration: none;"></a>
+                </div>
                 
                 <img src="../catalogue/logo.png" style="position: relative; margin-bottom: 10px;">
                 <a class="button" id="bote" onclick="changerbot()">
@@ -321,9 +327,11 @@ if(isset($_SESSION['Id'])) {
                 </a>
             </div>
         </div>
-        <h6>Votre carte vous benifice des réductions importantes.Activez La!</h6>
-        <small>Note:Vous pouvez activer qu'après avoir valider une commade au moins</small>
+        <h6>Votre carte vous bénéficie des réductions importantes.Activez La!</h6>
+        <small>Note:Vous pouvez activer qu'après avoir valider une commande au moins</small>
     </div>
+    
+
 
    </div>
 
@@ -452,12 +460,18 @@ document.getElementById("in3").disabled = false;
       }
 
     </script>
+    <script type="text/javascript">
+      function Error(){
+
+        Swal.fire(
+        'error',
+        "Il faut valider au moins une commande" ,
+        'error'
+   )
+      }
+    </script>
 
     <script type="text/javascript">
-      
-     
-       //window.location= 'verfiercarte.php';
-       
        $.ajax(
            {
              url: 'verfiercarte.php',
@@ -465,49 +479,119 @@ document.getElementById("in3").disabled = false;
              data :{ verif: 1
                      
                    },
-            success: function (response){
-             if(response.indexOf('activer')>=0)
+            success: function (data){
+              
+             if(data.indexOf('activer')>=0)
               {
                   $("#bote").text("Activer");
 
               }
-              if(response.indexOf('desactiver')>=0)
-              {
-                  $("#bote").text("Désactiver");
-              }
-
-            }, 
-            } 
+              if(data.indexOf('desactiver')>=0)
+              {   //afficher le nombre de point
+                $("#bote").text("Désactiver");
+                $.ajax(
+                 {
+                    url: '../core/miseajcarte.php',
+                    method: 'POST',
+                    data :{ mise: 1
+                     
+                   },
+                    success: function (response){
+                   if(response.indexOf('aucunecommande')<=0)
+                    {$(".valeurp").text(response);
+                     var point = $(".valeurp").text();}
+                  },  
+                   }
+                   );
+                //mise ajour
+                $.ajax(
+                 {
+                    url: '../core/misepoint.php',
+                    method: 'POST',
+                    data :{ mise:point},  
+                 }
+                        );
+                
+            }
+            },
+          }
            
         );
-     
-   
     </script>
 
    <script type="text/javascript">
      function changerbot()
-     {
+     {   var points = $(".valeurp").text();
          var valeurbout = $("#bote").text();
-        if(valeurbout.indexOf('Activer')>=0) {
-              $.ajax(
+         
+         if(valeurbout.indexOf('Activer')>=0) {
+         $.ajax(
            {
-             url: 'ajoutercarte.php',
+             url: '../core/miseajcarte.php',
              method: 'POST',
-             data :{ act: 1
+             data :{ mise: 1
                      
                    },
             success: function (response){
-             if(response.indexOf('activer')>=0)
+             if(response.indexOf('aucunecommande')>=0)
+              {
+                  
+                  Error();
+
+              }
+              else
+              {  //******************Actviver la carte et afficher points
+                $("#bote").text("Désactiver");
+                $(".valeurp").text(response);
+                var point = $(".valeurp").text();
+
+
+                 $.ajax(
+                 {
+                    url: 'ajoutercarte.php',
+                    method: 'POST',
+                    data :{ act: 1
+                     
+                   },
+                    success: function (response){
+                   if(response.indexOf('activer')>=0)
               {Swal.fire(
                   'Félicitation',
                   'Votre Carte est activé!',
                   'success'
                     )}
-            },  
-           }
+                  },  
+                   }
+                   );
+
+
+                  //***************************mise a jour des points
+                   $.ajax(
+                 {
+                    url: '../core/misepoint.php',
+                    method: 'POST',
+                    data :{ mise:point
+                                     },
+                      
+                 }
+                        );
+
+                 
+              }
+
+
+
+
+            },
+            }    
         );
-         $("#bote").text("Désactiver");
+
+
+
         }
+        
+
+
         if(valeurbout.indexOf('Désactiver')>=0)
         {
          $.ajax(
@@ -531,4 +615,7 @@ document.getElementById("in3").disabled = false;
         }
      }
    </script>
+
+
+   
    

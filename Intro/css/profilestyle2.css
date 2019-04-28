@@ -242,8 +242,8 @@ h6{
 .vcard{
     margin-top: 10px;
     margin-left: 100px;
-    width: 240px;
-    height: 405px;
+    width: 248px;
+    height: 455px;
     background: #000c14;
     border-radius: 8px;
     box-shadow: 5px 0px 20px rgba(0,0,0,39%);
@@ -264,7 +264,7 @@ h6{
 .wave-01{
     position: absolute;
     width: 400px;
-    height: 450px;
+    height: 475px;
     /*background: linear-gradient(to top right, var(--gold), var(--yelow));*/
     background: linear-gradient(to top right, #947047, #947047);
     border-radius: 50%;
@@ -275,7 +275,7 @@ h6{
 .wave-02{
     position: absolute;
     width: 400px;
-    height: 450px;
+    height: 475px;
     background: linear-gradient(to top right, #947047, #947047);
     border-radius: 40%;
     top: -205%;
@@ -286,7 +286,7 @@ h6{
 .wave-03{
     position: absolute;
     width: 400px;
-    height: 450px;
+    height: 475px;
     background: linear-gradient(to top right, #947047, #947047);
     border-radius: 45%;
     top: -198%;

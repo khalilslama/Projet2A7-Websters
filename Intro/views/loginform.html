@@ -205,10 +205,13 @@
             success: function (response){
              if(response.indexOf('erreur')>=0)
                Error();
-             if(response.indexOf('success')>=0)
+             else if(response.indexOf('success')>=0)
                window.location= 'Profil.php';
-             if(response.indexOf('back')>=0)
-               window.location= '../backend/views/index.html';
+             else if(response.indexOf('back')>=0)
+               window.location= '../backend/views/index.php';
+                
+                  
+
             },  
            }
         );

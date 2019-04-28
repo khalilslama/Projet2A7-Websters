@@ -7,7 +7,7 @@ include('database_connection.php');
 $query = '';
 $output = array();
 
-$query .= "SELECT carte.DateActivation,client.Nom,client.Prenom,client.Email,client.Numero 
+$query .= "SELECT carte.DateActivation,client.Nom,client.Prenom,client.Email,carte.point,client.Numero 
 FROM carte 
 INNER JOIN client 
 ON(carte.Idclient=client.Id)";
@@ -47,6 +47,7 @@ foreach($result as $row)
  $sub_array[] = $row["Email"];
  $sub_array[] = $row["Numero"];
  $sub_array[] = $row["DateActivation"];
+ $sub_array[] = $row["point"];
  
  
  
@@ -55,7 +56,7 @@ foreach($result as $row)
 
 function get_total_all_records($connect)
 {
- $statement = $connect->prepare("SELECT carte.DateActivation,client.Nom,client.Prenom,client.Email,client.Numero
+ $statement = $connect->prepare("SELECT carte.DateActivation,client.Nom,client.Prenom,client.Email,carte.point,client.Numero
   FROM carte 
   INNER JOIN client 
   ON(carte.Idclient=client.Id)");

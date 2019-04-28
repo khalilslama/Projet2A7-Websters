@@ -173,7 +173,7 @@
         'error',
         'Veuillez Remplir les champs',
         'error'
-)
+       )
 
 
        }
@@ -194,7 +194,7 @@
       {
         empty();
       }
-      else if(numeroe.length < 8)
+      else if(numeroe.length < 8 || numeroe.length >20 )
       {
       alert("Votre numero est invalide");
 
@@ -208,7 +208,10 @@
       else if(password.length < 6)
       {
       alert("Votre mot de passe est trés court ..Au moins 6 caractères");
-
+      }
+      else if(password.length > 20)
+      {
+      alert("Votre mot de passe est trés long");
       }
       else if(nome.length < 1)
       {
@@ -233,7 +236,7 @@
       else
      {$.ajax(
            {
-             url: 'views/Ajouterclient.php',
+             url: 'Ajouterclient.php',
              method: 'POST',
              data :{ Inscrip: 1,
                      nom: nome,
@@ -245,7 +248,8 @@
                    },
             success: function (response){
              if(response.indexOf('success00')>=0)
-               { SuccessIns(function(){window.location= '../index.html';});
+               { SuccessIns();
+                 
                 
                  
                }
@@ -259,14 +263,14 @@
 
     </script>
     <script type="text/javascript">
-      function SuccessIns(callback){
+      function SuccessIns(){
 
         Swal.fire(
        'Bienvenue!',
-       'Votre Inscription est validé..',
+       'Votre Inscription est validé..passez au log-in',
        'success'
         )
-      callback();
+      
       }
     </script>
     <script type="text/javascript">

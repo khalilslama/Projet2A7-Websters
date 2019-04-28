@@ -3,7 +3,7 @@ include "../entities/client.php";
 include "../core/clientR.php";
 
 if(isset($_POST['Inscrip']))
-{//$bdd = new PDO('mysql:host=localhost;dbname=test', 'root', '');
+{
    $errors = array();
    $pseudo = htmlspecialchars($_POST['nom']);
    $pseudo2 = htmlspecialchars($_POST['prenom']);
@@ -54,7 +54,7 @@ if(isset($_POST['Inscrip']))
                }
                if(empty($errors))  
                {
-                $Monclient = new Client($_POST['nom'],$_POST['prenom'],$_POST['email'],$_POST['mdp'],$_POST['numero']);
+                  $Monclient = new Client($_POST['nom'],$_POST['prenom'],$_POST['email'],$_POST['mdp'],$_POST['numero']);
                       $Monclientr = new ClientR();
                      //$Monclientr->ajouterClient($_POST['nom'],$_POST['prenom'],$_POST['email'],$_POST['numero'],$_POST['mdp']);
                           $Monclientr->ajouter2($Monclient); 
