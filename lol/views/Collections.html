@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Collections</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+ <link rel="stylesheet" type="text/css" href="swiper.min.css">
+ <link rel="stylesheet" type="text/css" href="slider.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#">
+          <div class="icon">
+            <i class="fas fa-home"></i>
+          </div>
+          <div class="name" data-text="Acceuil">Acceuil</div>
+        </a>
+      </li>
+      <li><a href="#">
+          <div class="icon">
+            <i class="fas fa-swatchbook"></i>
+          </div>
+          <div class="name" data-text="Collections">Collections</div>
+        </a>
+      </li>
+    <li><a href="#">
+          <div class="icon">
+            <i class="fas fa-images"></i>
+          </div>
+          <div class="name" data-text="NouvellesCollections">Nouvelles Collections</div>
+        </a>
+      </li>
+    <li><a href="#">
+          <div class="icon">
+            <i class="fas fa-file-signature"></i>
+          </div>
+          <div class="name" data-text="Réclamations">Commandes</div>
+        </a>
+      </li>
+    <li><a href="#">
+          <div class="icon">
+            <i class="fas fa-home"></i>
+          </div>
+          <div class="name" data-text="Déconnexion">Déconnexion</div>
+        </a>
+      </li>
+  </ul>
+</nav>
+</header>
+<main>
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+     <div class="swiper-image">
+      <img src="acceuil.jpg">
+    </div>
+    <div class="swiper-description">
+      <h2>2012</h2>
+    </div>
+  </div>
+  <div class="swiper-slide">
+   <div class="swiper-image">
+    <a href="#"><img src="img1.jpg"></a>
+  </div>
+  <div class="swiper-description">
+    <h2>2013</h2>
+  </div>
+</div>
+<div class="swiper-slide">
+ <div class="swiper-image">
+  <img src="img2.jpg">
+</div>
+<div class="swiper-description">
+  <img src="2012.png">
+</div>
+</div>
+<div class="swiper-slide"></div>
+<div class="swiper-slide"></div>
+<div class="swiper-slide"></div>
+<div class="swiper-slide"></div>
+<div class="swiper-slide"></div>
+</div>
+<div class="swiper-pagination"></div>
+</div>
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+     <div class="swiper-image">
+      <img src="acceuil.jpg">
+    </div>
+    <div class="swiper-description">
+      <h2>2012</h2>
+    </div>
+  </div>
+  <div class="swiper-slide">
+   <div class="swiper-image">
+    <a href="#"><img src="img1.jpg"></a>
+  </div>
+  <div class="swiper-description">
+    <h2>2013</h2>
+  </div>
+</div>
+<div class="swiper-slide">
+ <div class="swiper-image">
+  <img src="img2.jpg">
+</div>
+<div class="swiper-description">
+  <img src="2012.png">
+</div>
+</div>
+<div class="swiper-slide"></div>
+<div class="swiper-slide"></div>
+<div class="swiper-slide"></div>
+<div class="swiper-slide"></div>
+<div class="swiper-slide"></div>
+</div>
+<div class="swiper-pagination"></div>
+</div>
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+     <div class="swiper-image">
+      <img src="acceuil.jpg">
+    </div>
+    <div class="swiper-description">
+      <h2>2012</h2>
+    </div>
+  </div>
+  <div class="swiper-slide">
+   <div class="swiper-image">
+    <a href="#"><img src="img1.jpg"></a>
+  </div>
+  <div class="swiper-description">
+    <h2>2013</h2>
+  </div>
+</div>
+<div class="swiper-slide">
+ <div class="swiper-image">
+  <img src="img2.jpg">
+</div>
+<div class="swiper-description">
+  <img src="2012.png">
+</div>
+</div>
+<div class="swiper-slide"></div>
+<div class="swiper-slide"></div>
+<div class="swiper-slide"></div>
+<div class="swiper-slide"></div>
+<div class="swiper-slide"></div>
+</div>
+<div class="swiper-pagination"></div>
+</div>
+</main>
+<footer></footer>
+<script type="text/javascript" src="swiper.min.js"></script>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows : true,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  });
+</script>
+</body>
+</html>
